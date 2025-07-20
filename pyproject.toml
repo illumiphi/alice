@@ -1,0 +1,39 @@
+[project]
+name = "illumiphi-alice"
+dynamic = ["version"]
+authors = [
+  { name="phi ARCHITECT", email="github@phiarchitect.com" },
+]
+description = "property"
+readme = "README.rst"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "textual",
+    "rich",
+    "jinja2",
+]
+
+[project.scripts]
+alice = "illumiphi.alice.__main__:run"
+
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["illumiphi"]
+namespaces = true
+
+[tool.setuptools.dynamic]
+version = {attr = "illumiphi.alice.__version__"}
+
+[project.urls]
+"Website" = "https://illumiphi.github.io/alice"
+"Repository" = "https://github.com/illumiphi/alice"
+"Issues" = "https://github.com/illumiphi/alice/issues"
